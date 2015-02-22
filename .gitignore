@@ -1,0 +1,10 @@
+*.msi
+*.exe
+*.class
+*.jar
+*.war
+*.ear
+target/
+.settings/
+.project
+.classpath
