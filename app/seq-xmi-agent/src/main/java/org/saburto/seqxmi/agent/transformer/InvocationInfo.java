@@ -24,6 +24,7 @@ public class InvocationInfo {
 	private String type;
 	private Map<String, String> args = new LinkedHashMap<String, String>();
 	private String returnType = "void";
+	private boolean end = false;
 	
 
 	public static InvocationInfoBuilder builder() {
@@ -172,6 +173,12 @@ public class InvocationInfo {
 			return this;
 		}
 		
+	}
+
+
+
+	public void setEnd() {
+		end = true;
 	}
 	
 }

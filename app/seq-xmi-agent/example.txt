@@ -1,1 +1,4 @@
-<invocationInfo><name>testRunSeq</name><type>org.saburto.seqxmi.TestClassSeq</type><args/><returnType>void</returnType></invocationInfo><invocationInfo><name>methodA</name><type>org.saburto.seqxmi.TestClassSeq</type><args/><returnType>void</returnType></invocationInfo>
+<invocationInfo>
+	<name>testRunSeq</name>
+	<type>org.saburto.seqxmi.TestClassSeq</type><args/><returnType>void</returnType>
+</invocationInfo><invocationInfo><name>methodA</name><type>org.saburto.seqxmi.TestClassSeq</type><args/><returnType>void</returnType></invocationInfo>

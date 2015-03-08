@@ -15,6 +15,7 @@ import javassist.NotFoundException;
 import javassist.bytecode.LocalVariableAttribute;
 import javassist.bytecode.MethodInfo;
 
+import org.junit.Test;
 import org.saburto.seqxmi.agent.transformer.InvocationInfo.InvocationInfoBuilder;
 
 public class CallTraceTransformer implements ClassFileTransformer  {
@@ -33,12 +34,20 @@ public class CallTraceTransformer implements ClassFileTransformer  {
 				CtMethod[] declaredMethods = cc.getDeclaredMethods();
 				for (CtMethod m : declaredMethods) {
 					if(m.isEmpty()) continue;
+					
+					String beforeStatement = "";
+					String afterStatement = "";
+					if(m.hasAnnotation(Test.class)){
+						beforeStatement += "org.saburto.seqxmi.agent.transformer.CallTraceTransformer.startFileTest(\""+ m.getName() +"\");";
+						afterStatement += "org.saburto.seqxmi.agent.transformer.CallTraceTransformer.endFileTest(\""+ m.getName() +"\");";
+					}
 
 					InvocationInfo invocationInfo = getInvocationInfo(m, cc);
-					String string = "org.saburto.seqxmi.agent.transformer.CallTraceTransformer.addInvocation(\"" + invocationInfo.toXML() + "\");";
-					m.insertBefore(string);	
+					beforeStatement += "org.saburto.seqxmi.agent.transformer.CallTraceTransformer.addInvocation(\"" + invocationInfo.toXML() + "\");";
+					m.insertBefore(beforeStatement);	
 					
-					//m.insertAfter("System.out.println(\"" + info + "\");");
+					invocationInfo.setEnd();
+					m.insertAfter("org.saburto.seqxmi.agent.transformer.CallTraceTransformer.addInvocation(\"" + invocationInfo.toXML() + "\");" + afterStatement);
 				}
 
 				byteCode = cc.toBytecode();
@@ -51,21 +60,35 @@ public class CallTraceTransformer implements ClassFileTransformer  {
 		return byteCode;
 	}
 	
+	private static String filename = null;
+	public static void startFileTest(String testName){
+		filename = testName + ".xml";
+		File file = new File(filename);
+		if(file.exists()){
+			file.delete();
+		}
+		writeXML("<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><sequenceInfo>", filename);
+	}
+	
+	public static void endFileTest(String testName){
+		writeXML("</sequenceInfo>", filename);	
+	}
+	
 	public static void addInvocation(String xml){
-		
-		
+		writeXML(xml, filename);
+	}
+
+	private static void writeXML(String xml, String pathname) {
+		if(pathname == null){
+			return;
+		}
 		try {
-			
-			File file = new File("example.txt");
+			File file = new File(pathname);
 	        BufferedWriter output = new BufferedWriter(new FileWriter(file, true));
 	        output.write(xml);
 	        output.close();
-			
-			
 		} catch (Exception e) {
 		}
-		
-		
 	}
 	
 
