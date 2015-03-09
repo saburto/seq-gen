@@ -1,5 +1,5 @@
-#Diagram Sequence XMI generator for Java
+#Simple Diagram Sequence generator for Java
 
-The goal of this project is to generate XMI file for EA based on junit execution.
+The goal of this project is to generate xml files for EA based on junit execution.
 
 
