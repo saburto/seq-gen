@@ -68,7 +68,7 @@ public class TestCallTraceTransformer {
 	public void test_Getting_Info_Method_In_XML() throws Exception {
 		
 		InvocationInfo expected = InvocationInfo.builder().setType(ClassA.class.getName()).setName("Hola").addArg(String.class.getName(), "a").addArg("int", "b").setReturnType("int").build();
-		System.out.println(expected.toXML());
+		System.out.println(expected.toXMLStart());
 		
 		
 	}

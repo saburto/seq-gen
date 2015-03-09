@@ -43,11 +43,10 @@ public class CallTraceTransformer implements ClassFileTransformer  {
 					}
 
 					InvocationInfo invocationInfo = getInvocationInfo(m, cc);
-					beforeStatement += "org.saburto.seqxmi.agent.transformer.CallTraceTransformer.addInvocation(\"" + invocationInfo.toXML() + "\");";
+					beforeStatement += "org.saburto.seqxmi.agent.transformer.CallTraceTransformer.addInvocation(\"" + invocationInfo.toXMLStart() + "\");";
 					m.insertBefore(beforeStatement);	
 					
-					invocationInfo.setEnd();
-					m.insertAfter("org.saburto.seqxmi.agent.transformer.CallTraceTransformer.addInvocation(\"" + invocationInfo.toXML() + "\");" + afterStatement);
+					m.insertAfter("org.saburto.seqxmi.agent.transformer.CallTraceTransformer.addInvocation(\"" + invocationInfo.toXMLEnd() + "\");" + afterStatement);
 				}
 
 				byteCode = cc.toBytecode();

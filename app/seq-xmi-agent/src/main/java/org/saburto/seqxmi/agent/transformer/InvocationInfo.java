@@ -14,17 +14,16 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlRootElement;
 
-import org.saburto.seqxmi.agent.transformer.InvocationInfo.InvocationInfoBuilder;
-
 @XmlRootElement
 @XmlAccessorType(XmlAccessType.FIELD)
 public class InvocationInfo {
 	
+	private static final String INVOCATION_INFO = "</invocationInfo>";
 	private String name;
 	private String type;
 	private Map<String, String> args = new LinkedHashMap<String, String>();
 	private String returnType = "void";
-	private boolean end = false;
+	
 	
 
 	public static InvocationInfoBuilder builder() {
@@ -89,7 +88,7 @@ public class InvocationInfo {
 		return true;
 	}
 	
-	public String toXML(){
+	public String toXMLStart(){
 		StringWriter writer = new StringWriter();
 		try {
 			JAXBContext context = JAXBContext.newInstance(InvocationInfo.class);
@@ -99,7 +98,13 @@ public class InvocationInfo {
 		} catch (JAXBException e) {
 			throw new RuntimeException(e);
 		}
-		return writer.toString();
+		
+		String start = writer.toString();
+		return start.replaceFirst("</invocationInfo>", "");
+	}
+	
+	public String toXMLEnd(){
+		return INVOCATION_INFO;
 	}
 
 	
@@ -177,8 +182,6 @@ public class InvocationInfo {
 
 
 
-	public void setEnd() {
-		end = true;
-	}
+	
 	
 }
