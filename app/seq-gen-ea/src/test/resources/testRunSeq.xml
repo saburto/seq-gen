@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<sequenceInfo>
+	<invocationInfo>
+		<name>testRunSeq</name>
+		<type>org.saburto.seqxmi.TestClassSeq</type>
+		<args />
+		<returnType>void</returnType>
+		<invocationInfo>
+			<name>methodA</name>
+			<type>org.saburto.seqxmi.TestClassSeq</type>
+			<args />
+			<returnType>void</returnType>
+		</invocationInfo>
+	</invocationInfo>
+</sequenceInfo>

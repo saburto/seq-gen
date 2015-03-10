@@ -1,4 +1,6 @@
-package org.saburto.seqxmi.gen.input;
+package org.saburto.seqxmi.gen.output;
+
+import static org.junit.Assert.*;
 
 import java.io.StringWriter;
 import java.util.ArrayList;
@@ -6,13 +8,18 @@ import java.util.ArrayList;
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.Marshaller;
 
+import org.junit.Before;
 import org.junit.Test;
+import org.saburto.seqxmi.gen.input.InvocationInfo;
+import org.saburto.seqxmi.gen.input.SequenceInfo;
 
-public class TestSequenceInfoInput {
+public class TestSequenceEntryBuilder {
 	
-	@Test
-	public void testReadXML() throws Exception {
-		SequenceInfo sequenceInfo = new SequenceInfo();
+	private SequenceInfo sequenceInfo;
+	
+	@Before
+	public void setup(){
+		sequenceInfo = new SequenceInfo();
 		ArrayList<InvocationInfo> invocations = new ArrayList<InvocationInfo>();
 		
 		InvocationInfo invocation = new InvocationInfo();
@@ -25,23 +32,28 @@ public class TestSequenceInfoInput {
 		for (int i = 0; i < 4; i++) {
 			InvocationInfo subInvocation = new InvocationInfo();
 			subInvocation.setType("Hola");
-			subInvocation.setName("ok");
+			subInvocation.setName("ok" + i);
 			subInvocation.setReturnType("int");
 			subInvocations.add(subInvocation);	
 		}
 		
 		invocation.setInvocationInfo(subInvocations);
 		
-		
-		
-		
 		sequenceInfo.setInvocationInfo(invocations);
+	}
+	
+	
+	@Test
+	public void test_Generate_SequenceEntry() throws Exception {
+		RecordingHistory recordingHistory = new RecordingHistoryBuilder().addSequenceInfo(sequenceInfo).build();
 		
-		JAXBContext context = JAXBContext.newInstance(SequenceInfo.class);
+		JAXBContext context = JAXBContext.newInstance(RecordingHistory.class);
 		Marshaller marshaller = context.createMarshaller();
+		marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
 		StringWriter writer = new StringWriter();
-		marshaller.marshal(sequenceInfo, writer);
+		marshaller.marshal(recordingHistory, writer);
 		System.out.println(writer.toString());
+					
 	}
 
 }
