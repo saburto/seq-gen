@@ -1,4 +1,4 @@
-package org.saburto.seqxmi.agent.transformer;
+package org.saburto.seq.agent.transformer;
 
 import java.io.BufferedWriter;
 import java.io.File;
@@ -16,7 +16,7 @@ import javassist.bytecode.LocalVariableAttribute;
 import javassist.bytecode.MethodInfo;
 
 import org.junit.Test;
-import org.saburto.seqxmi.agent.transformer.InvocationInfo.InvocationInfoBuilder;
+import org.saburto.seq.agent.transformer.InvocationInfo.InvocationInfoBuilder;
 
 public class CallTraceTransformer implements ClassFileTransformer  {
 	public byte[] transform(ClassLoader loader, String className,

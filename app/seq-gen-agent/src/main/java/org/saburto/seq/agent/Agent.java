@@ -1,8 +1,8 @@
-package org.saburto.seqxmi.agent;
+package org.saburto.seq.agent;
 
 import java.lang.instrument.Instrumentation;
 
-import org.saburto.seqxmi.agent.transformer.CallTraceTransformer;
+import org.saburto.seq.agent.transformer.CallTraceTransformer;
 
 public class Agent {
 	

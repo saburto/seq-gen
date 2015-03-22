@@ -1,4 +1,4 @@
-package org.saburto.seqxmi.agent.transformer;
+package org.saburto.seq.agent.transformer;
 
 import java.io.StringWriter;
 import java.util.Collections;

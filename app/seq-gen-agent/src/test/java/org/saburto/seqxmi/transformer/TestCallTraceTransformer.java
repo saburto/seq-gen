@@ -8,8 +8,8 @@ import javassist.NotFoundException;
 
 import org.junit.Before;
 import org.junit.Test;
-import org.saburto.seqxmi.agent.transformer.CallTraceTransformer;
-import org.saburto.seqxmi.agent.transformer.InvocationInfo;
+import org.saburto.seq.agent.transformer.CallTraceTransformer;
+import org.saburto.seq.agent.transformer.InvocationInfo;
 import org.saburto.seqxmi.example.ClassA;
 
 public class TestCallTraceTransformer {
