@@ -4,7 +4,7 @@
 	<groupId>org.saburto.seq-gen</groupId>
 	<artifactId>gen-ea</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>Diagram Sequence XMI generator</name>
+	<name>Diagram Sequence generator for EA</name>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -30,11 +30,6 @@
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
 			<version>4.11</version>
-		</dependency>
-		<dependency>
-			<groupId>ch.qos.logback</groupId>
-			<artifactId>logback-classic</artifactId>
-			<version>1.1.2</version>
 		</dependency>
 
 	</dependencies>
