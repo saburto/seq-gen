@@ -1,4 +1,4 @@
-package org.saburto.seqxmi.gen;
+package org.saburto.seq.gen;
 
 import static org.hamcrest.CoreMatchers.containsString;
 import static org.hamcrest.CoreMatchers.not;
@@ -11,6 +11,7 @@ import java.io.PrintStream;
 
 import org.junit.Before;
 import org.junit.Test;
+import org.saburto.seq.gen.GeneratorCommandLine;
 
 public class TestGenerator {
 	

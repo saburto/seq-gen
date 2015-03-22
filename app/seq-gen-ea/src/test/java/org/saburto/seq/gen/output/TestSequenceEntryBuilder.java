@@ -1,4 +1,4 @@
-package org.saburto.seqxmi.gen.output;
+package org.saburto.seq.gen.output;
 
 import static org.junit.Assert.*;
 
@@ -10,8 +10,10 @@ import javax.xml.bind.Marshaller;
 
 import org.junit.Before;
 import org.junit.Test;
-import org.saburto.seqxmi.gen.input.InvocationInfo;
-import org.saburto.seqxmi.gen.input.SequenceInfo;
+import org.saburto.seq.gen.input.InvocationInfo;
+import org.saburto.seq.gen.input.SequenceInfo;
+import org.saburto.seq.gen.output.RecordingHistory;
+import org.saburto.seq.gen.output.RecordingHistoryBuilder;
 
 public class TestSequenceEntryBuilder {
 	

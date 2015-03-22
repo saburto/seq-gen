@@ -1,4 +1,4 @@
-package org.saburto.seqxmi.example;
+package org.saburto.seq.example;
 
 public class ClassA {
 

@@ -1,4 +1,4 @@
-package org.saburto.seqxmi;
+package org.saburto.seq;
 
 import org.junit.Test;
 

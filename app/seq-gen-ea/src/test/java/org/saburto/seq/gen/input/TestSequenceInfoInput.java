@@ -1,4 +1,4 @@
-package org.saburto.seqxmi.gen.input;
+package org.saburto.seq.gen.input;
 
 import java.io.StringWriter;
 import java.util.ArrayList;
@@ -7,6 +7,8 @@ import javax.xml.bind.JAXBContext;
 import javax.xml.bind.Marshaller;
 
 import org.junit.Test;
+import org.saburto.seq.gen.input.InvocationInfo;
+import org.saburto.seq.gen.input.SequenceInfo;
 
 public class TestSequenceInfoInput {
 	

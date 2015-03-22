@@ -1,11 +1,11 @@
-package org.saburto.seqxmi.gen;
+package org.saburto.seq.gen;
 
 import java.io.File;
 
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.Unmarshaller;
 
-import org.saburto.seqxmi.gen.input.SequenceInfo;
+import org.saburto.seq.gen.input.SequenceInfo;
 
 public class GeneratorEA {
 	

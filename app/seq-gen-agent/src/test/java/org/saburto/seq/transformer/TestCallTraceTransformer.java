@@ -1,4 +1,4 @@
-package org.saburto.seqxmi.transformer;
+package org.saburto.seq.transformer;
 
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.junit.Assert.assertThat;
@@ -10,7 +10,7 @@ import org.junit.Before;
 import org.junit.Test;
 import org.saburto.seq.agent.transformer.CallTraceTransformer;
 import org.saburto.seq.agent.transformer.InvocationInfo;
-import org.saburto.seqxmi.example.ClassA;
+import org.saburto.seq.example.ClassA;
 
 public class TestCallTraceTransformer {
 	

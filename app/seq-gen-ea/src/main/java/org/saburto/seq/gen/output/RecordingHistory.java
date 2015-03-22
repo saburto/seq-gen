@@ -1,4 +1,4 @@
-package org.saburto.seqxmi.gen.output;
+package org.saburto.seq.gen.output;
 
 import java.util.ArrayList;
 import java.util.List;

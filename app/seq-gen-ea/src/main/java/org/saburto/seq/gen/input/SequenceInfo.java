@@ -1,4 +1,4 @@
-package org.saburto.seqxmi.gen.input;
+package org.saburto.seq.gen.input;
 
 import java.util.List;
 

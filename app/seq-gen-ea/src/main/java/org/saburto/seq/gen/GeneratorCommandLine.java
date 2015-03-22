@@ -1,4 +1,4 @@
-package org.saburto.seqxmi.gen;
+package org.saburto.seq.gen;
 
 public class GeneratorCommandLine {
 

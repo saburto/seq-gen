@@ -1,9 +1,9 @@
-package org.saburto.seqxmi.gen.output;
+package org.saburto.seq.gen.output;
 
 import java.util.List;
 
-import org.saburto.seqxmi.gen.input.InvocationInfo;
-import org.saburto.seqxmi.gen.input.SequenceInfo;
+import org.saburto.seq.gen.input.InvocationInfo;
+import org.saburto.seq.gen.input.SequenceInfo;
 
 public class RecordingHistoryBuilder {
 	

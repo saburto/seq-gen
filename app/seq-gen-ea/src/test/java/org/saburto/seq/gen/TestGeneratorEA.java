@@ -1,4 +1,4 @@
-package org.saburto.seqxmi.gen;
+package org.saburto.seq.gen;
 
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.fail;
@@ -7,7 +7,8 @@ import javax.xml.bind.UnmarshalException;
 
 import org.junit.Before;
 import org.junit.Test;
-import org.saburto.seqxmi.gen.input.SequenceInfo;
+import org.saburto.seq.gen.GeneratorEA;
+import org.saburto.seq.gen.input.SequenceInfo;
 
 public class TestGeneratorEA {
 	
