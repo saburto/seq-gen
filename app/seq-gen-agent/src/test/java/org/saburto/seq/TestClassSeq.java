@@ -1,6 +1,7 @@
 package org.saburto.seq;
 
 import org.junit.Test;
+import org.saburto.seq.example.ClassB;
 
 public class TestClassSeq {
 	
@@ -21,6 +22,12 @@ public class TestClassSeq {
 
 	private void methodA() {
 		System.out.println("Hello World");
+	}
+	
+	@Test
+	public void test_Complex_Seq(){
+		ClassB b = new ClassB();
+		b.execute();
 	}
 
 }

@@ -26,7 +26,7 @@ public class GeneratorCommandLine {
 	}
 
 	private static boolean argsAreValid(String[] args) {
-		return args.length > 2 && argsHaveContents(args);
+		return args.length >= 2 && argsHaveContents(args);
 	}
 
 	private static boolean argsHaveContents(String[] args) {

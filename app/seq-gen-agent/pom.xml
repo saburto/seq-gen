@@ -28,7 +28,7 @@
 					<configuration>
 						<archive>
 							<manifestEntries>
-								<premain-class>org.saburto.seqxmi.agent.Agent</premain-class>
+								<premain-class>org.saburto.seq.agent.Agent</premain-class>
 							</manifestEntries>
 						</archive>
 					</configuration>
